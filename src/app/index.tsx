@@ -1,11 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+
+import { Welcome } from "@/components/Welcome";
+import { Steps } from "@/components/Steps";
 
 export default function Index() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.title}>Olá Mundão!!</Text>
+
+      <Welcome />
+      <Steps />
     </View>
   )
 };
@@ -13,10 +18,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 22,
+    gap: 40,
+    padding: 40,
   }
 });
