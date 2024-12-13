@@ -1,23 +1,23 @@
 import { styles } from "./styles";
-import { Image, Text, View } from "react-native";
+import { colors } from "@/styles/colors";
+import { Text, View } from "react-native";
+import { IconProps } from "@tabler/icons-react-native";
 
-import ImageLogo from "../../assets/logo.png";
+type Props = {
+  title: string;
+  description: string;
+  icon: React.ComponentType<IconProps>;
+};
 
-export function Step() {
+export function Step({ title, description, icon: Icon }: Props) {
   return (
-    <View>
-      <Image
-        source={ImageLogo}
-        style={styles.logo}
-      />
+    <View style={styles.container}>
+      {Icon && <Icon size={32} color={colors.red.base} />}
 
-      <Text style={styles.title}>
-        Boas vindas ao Nearby!
-      </Text>
-      <Text style={styles.subtitle}>
-        Tenha cupons de vantagens para usar em {"\n"}
-        seus estabelecimentos favoritos.
-      </Text>
+      <View style={styles.details}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
     </View>
   )
 };

@@ -4,21 +4,24 @@ import { colors } from "@/styles/colors";
 import { fontFamily } from "@/styles/font-family";
 
 export const styles = StyleSheet.create({
-  logo: {
-    width: 48,
-    height: 48,
-    marginTop: 24,
-    marginBottom: 28,
+  container: {
+    width: '100%',
+    flexDirection: 'row',
+    gap: 16,
+    marginBottom: 25,
+  },
+  details: {
+    flex: 1
   },
   title: {
-    fontSize: 24,
-    color: colors.gray[600],
-    fontFamily: fontFamily.bold,
-  },
-  subtitle: {
     fontSize: 16,
+    color: colors.gray[600],
+    fontFamily: fontFamily.semiBold,
+  },
+  description: {
+    fontSize: 14,
     color: colors.gray[500],
     fontFamily: fontFamily.regular,
-    marginTop: 12,
+    marginTop: 14,
   }
 });
